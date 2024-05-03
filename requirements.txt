@@ -1,0 +1,13 @@
+# This file lists the dependencies required by the project.
+# Install the necessary packages using `pip`.
+
+chromadb == 0.4.24
+Werkzeug == 3.0.2
+llama-index == 0.10.26
+llama-index-core == 0.10.26
+llama-index-embeddings-huggingface == 0.2.0
+llama-index-llms-ollama == 0.1.2
+llama-index-vector-stores-chroma == 0.1.6
+langfuse == 2.21.3
+python-dotenv == 1.0.1
+nemoguardrails == 0.8.2
