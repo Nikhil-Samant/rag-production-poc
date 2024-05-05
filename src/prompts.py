@@ -6,14 +6,13 @@ from config import PROMPT_TEMPLATE, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY
 def get_template():
     template = default_template
     if LANGFUSE_PUBLIC_KEY is not None and LANGFUSE_SECRET_KEY is not None:
-        langfuse = Langfuse()
         try:
+            langfuse = Langfuse()
             prompt = langfuse.get_prompt(PROMPT_TEMPLATE)
+            if prompt is not None:
+                template = prompt.compile()
         except Exception as e:
             print("Error in getting prompt template - ", e)
-            return None
-        if prompt is not None:
-            template = prompt.compile()
         return PromptTemplate(template)
     return PromptTemplate(template)
 

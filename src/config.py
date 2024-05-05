@@ -5,7 +5,9 @@ load_dotenv()
 
 LLM_MODEL = os.getenv('LLM_MODEL', "llama3")
 
-EMBED_MODEL = os.getenv('EMBED_MODEL', "BAAI/bge-small-en-v1.5")
+EMBED_MODEL = os.getenv('EMBED_MODEL', "nomic-embed-text")
+
+TOKEN_COUNT_FOR_MODEL = os.getenv('TOKEN_COUNT_FOR_MODEL', "gpt-3.5-turbo")
 
 CHUNK_SIZE = int(os.getenv('CHUNK_SIZE', 1000))
 
@@ -15,7 +17,7 @@ REQUEST_TIMEOUT = int(os.getenv('REQUEST_TIMEOUT', 60))
 
 DOCUMENTS_DIR = os.getenv('DOCUMENTS_DIR', "../docs")
 
-COLLECTION_NAME = os.getenv('COLLECTION_NAME', "demo_chat")
+COLLECTION_NAME = os.getenv('COLLECTION_NAME', "demo_collection")
 
 PROMPT_TEMPLATE = os.getenv('PROMPT_TEMPLATE', "demo_prompt")
 
